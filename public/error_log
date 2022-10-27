@@ -1,0 +1,1 @@
+[18-Oct-2022 16:05:01 UTC] PHP Fatal error:  Allowed memory size of 1073741824 bytes exhausted (tried to allocate 900661248 bytes) in /home/cwprocess/public_html/app/Traits/CountryTrait.php on line 44
