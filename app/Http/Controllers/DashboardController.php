@@ -20,15 +20,21 @@ class DashboardController extends Controller
 
     public function simplifypackage(Request $request){
         if($request->method() == "GET"){
-            $package =Package::all();
-            $a =array();
+            $package =Package::where(['user_id' => $request -> session() -> get('loginId')])->get(['user_id', 'submitterPackageID']);
+          
+                $a = array();
                 foreach($package as $item){
                     $packagedata = $this -> retrievepackage($item->submitterPackageID);
                     array_push($a, $packagedata);
                 }
+                
+              
                 // echo "<pre/>";
-                // print_r($a[0]->packageStatus);
+                // print_r($a[0] );
                 // die;
+              
+
+
             return view('frontend/simplify-package',['packagedata'=>$a]);
         }
     }
@@ -36,8 +42,9 @@ class DashboardController extends Controller
     public function retrivepackage(Request $request,$id=''){
         if($request->method() == "GET" || $id != ''){
             $packagedata = $this -> retrievepackage($id);
-            // echo "<pre/>";
-            // print_r($packagedata->packageStatus->documents[0]);die;
+        
+            // $this -> retrivedocs($packagedata -> packageStatus -> documents[0] -> id);
+            // die;
             return view('frontend/package-viewer',['packagedata'=>$packagedata,'docs'=>$packagedata->packageStatus->documents]);
         }
 

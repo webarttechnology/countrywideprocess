@@ -369,25 +369,17 @@ die;
         $endkey = '/packages/'.$packageId.'/retrieve';
         $jdata = Http::get($this -> link.$endkey.'?key='.$this -> key);
         $data = json_decode($jdata);
-        // echo "<pre/>";
-        // print_r($data);
         return $data;
     }
 
-    // public function retrieveallpackage(){
-    //     $package =Package::all();
-    //     foreach($package as $item){
-    //         return retrievepackage($packageId);
-    //     }
-    //     return $package;
-    // }
+  
 
     public function retrivedocs($docsId){
-        $endkey = '/documents/'.$docsId.'/retrieve';
+       $endkey = '/documents/'.$docsId.'/retrieve';
         $jdata = Http::get($this -> link.$endkey.'?key='.$this -> key);
         $data = json_decode($jdata);
-        // echo "<pre/>";
-        // print_r($data);die;
+        echo "<pre/>";
+        print_r($data);die;
         return $data;
     }
 

@@ -19,7 +19,7 @@
 							</tr>
 							<tr>
 								<th>Recipient</th>
-								<td>{{ $packagedata->packageStatus->recipientID." , ".$packagedata->packageStatus->recipientState }}</td>
+								<td>{{ $packagedata->packageStatus->recipientName." , ".$packagedata->packageStatus->recipientState }}</td>
 								<th>Submitter</th>
 								<td>CWProcess</td>
 							</tr>
@@ -77,7 +77,7 @@
 												<th width="50%">Name</th>
                                                 <th>Amount</th>
 												<th>Status</th>
-												<th>Actions</th>
+												<!-- <th>Actions</th> -->
 											</tr>
 										</thead>
 										<tbody>
@@ -86,7 +86,7 @@
 												<td>{{ $item->name ." , " . $item->kindOfInstrument[0] }}</td>
                                                 <td>${{ $item->feeInfoEstimated->feeEstimates[0]->amount }}</td>
 												<td><button type="button" class="btn btn-warning">{{ $packagedata->packageStatus->status }}</button></td></td>
-												<td><p>
+												<!-- <td><p>
                                                             <a href="{{ url('document-download/'.$item->id) }}"  >
                                                             <i class="bi bi-download"></i>
                                                             </a>
@@ -95,7 +95,7 @@
                                                             <i class="bi bi-file-earmark-pdf"></i>
                                                             </a>
 														</p>
-                                                        </td>
+                                                        </td> -->
 											</tr>
                                             @endforeach
 										</tbody>

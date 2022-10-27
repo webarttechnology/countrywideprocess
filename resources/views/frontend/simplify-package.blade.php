@@ -82,8 +82,8 @@
                                             @foreach($packagedata as $item)
 											<tr>
                                                
-												<td>{{ $item->packageStatus->name }}</td>
-												<td>{{ $item->packageStatus->recipientID." , ".$item->packageStatus->recipientState }}</td>
+												<td><a href="{{ url('viewer-package/'.$item->packageStatus->alternatePackageName) }}">{{ $item->packageStatus->name }}</a></td>
+												<td>{{ $item-> packageStatus -> recipientName }}</td>
 												<td>{{ count($item->packageStatus->documents) }}</td>
                                                 <td><button type="button" class="btn btn-warning">{{ $item->packageStatus->status }}</button></td>
                                                 <td>{{ $item->packageStatus->statusDate }}</td>
